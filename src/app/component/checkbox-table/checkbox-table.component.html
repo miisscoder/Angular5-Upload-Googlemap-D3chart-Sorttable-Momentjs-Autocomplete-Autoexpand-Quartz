@@ -1,0 +1,52 @@
+<div class="wrap-table ">
+    <!-- table head start -->
+    <div class="table-head flex space-between middle">
+        <div *ngFor="let column of options.columns" class="table-col"
+            [style.width]="column.width" [ngStyle]="column.headerStyle">
+            <div class="inner" >
+                <div *ngIf="column.key === 'checkbox'" class="checkbox-input">
+                    <input type="checkbox" [(ngModel)]="bCheckAll" (change)="checkAll()" />
+                    <i class="icon-checkbox"></i>
+                </div>
+                <span *ngIf="column.key != 'checbox'" class="col-title">{{column.title}}</span>
+            </div>
+        </div>
+    </div>
+    <!-- table head end -->
+    <!-- table body start -->
+    <div #scrollMe>
+        <div class="table-body"
+             infiniteScroll
+             [infiniteScrollDistance]="2"
+             [infiniteScrollThrottle]="50"
+             (scrolled)="onScrollDown()">
+            <ng-container *ngFor="let row of data; let index = index">
+                <!-- tabe row start -->
+                <div class="table-row flex space-between middle" [class.expanded]="row._expanded">
+                    <div class="table-col ellipsiswrap {{column.type}}-col"
+                         *ngFor="let column of options.columns" [style.width]="column.width" [ngStyle]="column.style">
+                        <div class="checkbox-input" *ngIf="column.key === 'checkbox'">
+                            <input type="checkbox" [(ngModel)]="row._checked" />
+                            <i class="icon-checkbox"></i>
+                        </div>
+                        <div class="circle" *ngIf="column.key === 'order'">
+                            <img src="{{row[column.key]}}" class="img-circle" alt=""/>
+                            <div class="no flex center middle"><h3>{{row['no']}}</h3></div>
+                        </div>
+                        <span *ngIf="column.key != 'order' && column.key != 'checkbox'&& column.key != 'order'">{{row[column.key]}}</span>
+                        <div class="btns flex center middle" *ngIf="column.key === 'btns'">
+                            <i class="icon grey-msg"></i>
+                            <i class="icon grey-edit"></i>
+                            <i class="icon grey-trash"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- tabe row end -->
+            </ng-container>
+        </div>
+    </div>
+    <div *ngIf="sumData > loadData" class="load">
+        Loading more items...
+    </div>
+    <!-- table body end -->
+</div>

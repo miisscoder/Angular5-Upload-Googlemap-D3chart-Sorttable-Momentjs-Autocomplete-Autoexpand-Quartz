@@ -1,0 +1,74 @@
+﻿<!--main page-->
+<div class="main-container">
+    <!--header bar-->
+    <app-header></app-header>
+    <div class="content flex space-between stretch">
+        <!--side bar-->
+        <app-side></app-side>
+        <!--main content-->
+        <div class="bg-content">
+            <div class="company-container flex space-between stretch">
+                <aside>
+                    <div class="menus">
+                        <div *ngFor="let item of data; let index = index;">
+                            <div (click)="company(index)" class="menu-card"
+                                 [ngClass]="{'expand': item._expand,
+                 'active': item._active}"
+                                 (mouseenter)="item._expand = true"
+                                 (mouseleave)="item._expand = false">
+                                <h3>{{item['company']}}</h3>
+                                <h2>Last Submission: {{item['lastSubmission']}}</h2>
+                                <div [ngClass]="{'hide': item._expand === false}"
+                                     class="btns flex start middle">
+                                    <i class="icon grey-edit"></i>
+                                    <i class="icon grey-trash"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="javascript:;" class="btn btn-blue btn-add-company flex space-between middle"><i class="icon add"></i>Add Company</a>
+                </aside>
+                <div class="table-box">
+                    <div class="flex space-between middle">
+                        <div class="flex start middle">
+                            <i class="icon company-logo"></i>
+                            <span class="title">Eggon Mobil</span>
+                        </div>
+                        <div class="btns flex space-between middle">
+                            <a href="javascript:;" class="btn btn-blue flex space-between middle">
+                                <i class="icon msg"></i> <span>Email All Contacts</span>
+                            </a>
+                            <a href="javascript:;" class="btn btn-blue flex space-between middle"
+                               (click)="bFilter = true">
+                                <i class="icon add-user"></i><span>Add Contact</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-box flex left top flex-wrap">
+                        <div *ngFor="let member of members" class="flex-item">
+                            <div class="cardthis flex space-between top">
+                                <div class="flex start top">
+                                    <img src="{{member.order}}" alt="" />
+                                    <div class="txts">
+                                        <h3>{{member.name}}</h3>
+                                        <div class="sub"> {{member.role}}</div>
+                                        <div class="blue">{{member.email}}</div>
+                                        <div class="txt"> {{member.phone}}</div>
+                                        <div> {{member.location}}</div>
+                                    </div>
+                                </div>
+                                <div class="no flex center middle"><h3>{{member['no']}}</h3></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <app-add-contact [bFilter]="bFilter" (onClose)="onClose($event)"
+                                 (onSubmit)="onSubmit($event)"></app-add-contact>
+            </div>            
+            <!--company page-->
+        </div>
+        <!--bg-content-->
+    </div>
+    <!--content-->
+</div>
+<!--main page-->

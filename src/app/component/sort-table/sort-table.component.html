@@ -1,0 +1,41 @@
+<div class="wrap-table " >
+    <!-- table head start -->
+    <div class="table-head flex space-between middle">
+        <div *ngFor="let column of options.columns" class="table-col"
+             [hidden]="!column.visiable" [style.width]="column.width" [ngStyle]="column.headerStyle">
+            <div class="inner" [class.sort]="column.sortable" (click)="onSort(column)">
+                <span class="col-title">{{column.title}}</span>
+                <span *ngIf="column.sortable" class="icon sort-arrow"
+                      [ngClass]="{active:  sort.dir==='desc'}"></span>
+            </div>
+        </div>
+    </div>
+    <!-- table head end -->
+    <!-- table body start -->
+    <div #scrollMe>
+        <div class="table-body"
+             infiniteScroll
+             [infiniteScrollDistance]="2"
+             [infiniteScrollThrottle]="50"
+             (scrolled)="onScrollDown()">
+            <ng-container *ngFor="let row of data; let index = index">
+                <!-- tabe row start -->
+                <div [ngClass]="{'hide': row._visible === false }" class="table-row flex space-between middle" [class.expanded]="row._expanded">
+                    <div class="table-col {{column.type}}-col" [hidden]="!column.visiable"
+                         *ngFor="let column of options.columns" [style.width]="column.width" [ngStyle]="column.style">
+                        <span class="circle" *ngIf="column.key === 'in'"
+                              [ngClass]="{'green': row[column.key] <= 0, 'purple': row[column.key] < 62 && row[column.key] > 31, 'blue': row[column.key] > 61,'yellow': row[column.key] < 32 && row[column.key] > 7,'orange': row[column.key] < 8 && row[column.key] > 0}"></span>
+                        <span *ngIf="!column.type && !(column.key === 'in' &&  row[column.key] <= 0)">{{row[column.key]}}</span>
+                        <span *ngIf="!column.type && column.key === 'in' && row[column.key] <= 0">Started</span>
+                        <span *ngIf="column.type==='latlong'">{{row[column.key]['lat']}},{{row[column.key]['lng']}}</span>
+                    </div>
+                </div>
+                <!-- tabe row end -->
+            </ng-container>
+        </div>
+    </div>
+    <div *ngIf="sumData > loadData" class="load">
+        Loading more items...
+    </div>
+    <!-- table body end -->
+</div>

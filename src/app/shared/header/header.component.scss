@@ -1,0 +1,60 @@
+@import '../../../assets/sass/_colors.scss';
+
+.header-container {
+    background-color: $color-bg-header;
+    height: 50px;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    z-index:10;
+
+    .logo-box {
+        background-color: #006bd5;
+        width: 50px;
+        height: 50px;
+    }
+
+    .top-shadow-box {
+        padding-left: 20px;
+        -moz-box-shadow: 0px 2px 4px #dddddd;
+        -webkit-box-shadow: 0px 2px 4px #dddddd;
+        box-shadow: 0px 2px 4px #dddddd;
+        width:calc(100% - 50px);
+        .title {
+            font-size: 16px;
+            h1{
+                padding-right:5px;
+            }
+        }
+
+        .search-group {
+            position: relative;
+            width:370px;
+            margin-right:20px;
+
+            i {
+                position: absolute;
+                left: 10px;
+                top: 6px;
+            }
+
+            input {
+                background-color: #f0f3f6;
+                font-size: 12px;
+                padding-left: 38px;
+                border:none;
+                height:30px;
+            }
+        }
+
+        .filter-box {
+            width: 50px;
+            height: 50px;
+            background-color: #00a963;
+            i{
+                margin-right:-5px;
+            }
+        }
+    }
+}

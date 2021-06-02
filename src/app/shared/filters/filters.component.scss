@@ -1,0 +1,99 @@
+@import '../../../assets/sass/_colors.scss';
+
+.filters-container {
+    .filters-box {
+        background-color: $color-bg;
+        margin-top: 15px;
+        margin-right: 15px;
+        width: 40px;
+        height: 40px;
+        border-radius: 6px;
+        -moz-box-shadow: 0px 0px 3px #bbbbbb;
+        -webkit-box-shadow: 0px 0px 3px #bbbbbb;
+        box-shadow: 0px 0px 3px #bbbbbb;
+    }
+
+    .filters-bar {
+        width: 260px;
+        background-color: $color-bg;
+        min-height: 100vh;
+        -moz-box-shadow: -2px 0px 2px #eeeeee;
+        -webkit-box-shadow: -2px 0px 2px #eeeeee;
+        box-shadow: -2px 0px 2px #eeeeee;
+        padding: 25px 20px;
+
+        .filters-title {
+            margin-bottom: 35px;
+
+            .icon.filters {
+                margin-right: 10px;
+            }
+        }
+
+        .group {
+            margin-bottom: 20px;
+
+            h3 {
+                margin-bottom: 5px;
+                color: $color-font-title;
+            }
+
+            .d-inline-block {
+                width: 100%;
+
+                .btn-select-duration {
+                    width: 100%;
+                    margin: 0;
+                    padding: 0 5px 0 12px;
+                    height: 30px;
+                    border-radius: 15px;
+                    background-color: $color-bg;
+                    box-shadow: none;
+                    border: 1px solid #cccccc;
+
+                    span {
+                        color: $color-font;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        -o-text-overflow: ellipsis;
+                        overflow: hidden;
+                        text-align: left;
+                        width: calc(100% - 40px);
+                    }
+                }
+            }
+
+            .date-input-group {
+                position: relative;
+                margin-top: 10px;
+
+                i {
+                    position: absolute;
+                    top: 8px;
+                    right: 8px;
+                }
+
+                input {
+                    padding: 0 10px;
+                }
+            }
+
+            .slider-wrapper{
+                margin-top:10px;
+            }
+
+            a.switch {
+                display:block;
+                margin-top: 20px;
+                color: $color-font-blue;
+                text-decoration:underline;
+            }
+        }
+
+        .btns{
+            margin-top:20px;
+        }
+    }
+
+
+}

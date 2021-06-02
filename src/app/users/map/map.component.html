@@ -1,0 +1,137 @@
+        
+
+<!--main page-->
+<div class="main-container">
+    <!--header bar-->
+    <app-header></app-header>
+    <div class="content flex space-between stretch">
+        <!--side bar-->
+        <app-side></app-side>
+        <!--main content-->
+        <div class="bg-content">
+            <div class="dashboard-container">
+                <!--link buttons-->
+                <div class="link-group flex center middle">
+                    <a href="javascript:;" class="nav-link flex center middle"
+                       (click)="goto('map')"
+                       routerLink="/main/dashboard/map"
+                       routerLinkActive="active">
+                        <i class="icon map"></i>
+                        <span>Map</span>
+                    </a>
+                    <a href="javascript:;" class="nav-link middle-link flex center middle"
+                       (click)="goto('list')"
+                       routerLink="/main/dashboard/list"
+                       routerLinkActive="active">
+                        <i class="icon list"></i>
+                        <span>List</span>
+                    </a>
+                    <a href="javascript:;" class="nav-link flex center middle"
+                       (click)="goto('chart')"
+                       routerLink="/main/dashboard/chart"
+                       routerLinkActive="active">
+                        <i class="icon chart"></i>
+                        <span>Chart</span>
+                    </a>
+                </div>
+                <!--main content-->
+                <div class="map-container">
+                    <agm-map *ngIf="mapShow" [latitude]="lat"
+                             [longitude]="lng"
+                             [zoom]="zoom"
+                             [styles]="styles"
+                             [disableDefaultUI]="false"
+                             [zoomControl]="false">
+                        <agm-marker  *ngFor="let m of markers; let i = index"
+                                    (mouseOut)="mouseOutMarker(i)"
+                                    (mouseOver)="mouseOverMarker(i)"
+                                    [latitude]="m.surfaceLat"
+                                    [longitude]="m.surfaceLng"
+                                    [label]="m.label"
+                                    [iconUrl]="m.iconUrl"
+                                    [markerDraggable]="m.draggable">
+                            <agm-info-window #info>
+                                <div class="info-box">
+                                    <h1 class="info-title">{{m.well}}</h1>
+                                    <h3 [style.color]="m.color" class="info-subtitle">{{m.status}}</h3>
+                                    <div class="progress-bar"><div class="progress" [style.background-color]="m.color" [style.width]="m.progress"></div></div>
+                                    <div class="info-progress">{{m.info}}</div>
+                                    <div class="flex start middle info-item"><div class="title">Operator:</div><h3>{{m.operator}}</h3></div>
+                                    <div class="flex start middle info-item"><div class="title">API:</div><h3>{{m.API}}</h3></div>
+                                    <div class="flex start middle info-item"><div class="title">Sheduled Frac Start:</div><h3>{{m.start}}</h3></div>
+                                    <div class="flex start middle info-item"><div class="title">Sheduled Frac End:</div><h3>{{m.end}}</h3></div>
+                                    <div class="flex start middle info-item"><div class="title">Surface Lat:</div><h3>{{m.surfaceLat}}</h3></div>
+                                    <div class="flex start middle info-item"><div class="title">Surface Long:</div><h3>{{m.surfaceLng}}</h3></div>
+                                    <div class="flex start middle info-item"><div class="title">Bottomhole Lat:</div><h3>{{m.bottomLat}}</h3></div>
+                                    <div class="flex start middle info-item"><div class="title">Bottomhole Long:</div><h3>{{m.bottomLng}}</h3></div>
+                                    <div class="flex start middle info-item"><div class="title">TVD:</div><h3>{{m.TVD}}</h3></div>
+                                </div>
+                            </agm-info-window>
+                            <agm-circle [latitude]="m.bottomLat+0.5"
+                                        [longitude]="m.bottomLng"
+                                        [radius]="m.radius * 10000"
+                                        (circleHover)="hoveredMarker(m.label, i)"
+                                        [fillColor]="m.color"
+                                        [fillOpacity]="0.3"
+                                        [circleDraggable]="false"
+                                        [editable]="false">
+                            </agm-circle>
+                        </agm-marker>
+                    </agm-map>
+                    <div class="schedule-box">
+                        <h3>Schedule Summary</h3>
+                        <div class="flex space-between middle schedule-line">
+                            <div class="schedule-left">
+                                <div class="color-bar green" [style.width]="operatingRate"></div>
+                                <div>Operating</div>
+                            </div>
+                            <div class="schedule-right flex center middle">
+                                <h3>{{operating}}</h3>
+                            </div>
+                        </div>
+                        <div class="flex space-between middle schedule-line">
+                            <div class="schedule-left">
+                                <div class="color-bar red" [style.width]="sevenRate"></div>
+                                <div>Next 7 days</div>
+                            </div>
+                            <div class="schedule-right flex center middle">
+                                <h3>{{seven}}</h3>
+                            </div>
+                        </div>
+                        <div class="flex space-between middle schedule-line">
+                            <div class="schedule-left">
+                                <div class="color-bar orange" [style.width]="thirtyRate"></div>
+                                <div>Next 8 - 30 days</div>
+                            </div>
+                            <div class="schedule-right flex center middle">
+                                <h3>{{thirty}}</h3>
+                            </div>
+                        </div>
+                        <div class="flex space-between middle schedule-line">
+                            <div class="schedule-left">
+                                <div class="color-bar purple" [style.width]="sixtyRate"></div>
+                                <div>Next 31 - 60 days</div>
+                            </div>
+                            <div class="schedule-right flex center middle">
+                                <h3>{{sixty}}</h3>
+                            </div>
+                        </div>
+                        <div class="flex space-between middle schedule-line">
+                            <div class="schedule-left">
+                                <div class="color-bar blue" [style.width]="sixtyPlusRate"></div>
+                                <div>Next 60+ days</div>
+                            </div>
+                            <div class="schedule-right flex center middle">
+                                <h3>{{sixtyPlus}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filters">
+                        <app-filters (onApply)="onApply($event)"></app-filters>
+                    </div>
+                </div>
+                <!--map-container-->
+            </div>
+        </div>
+    </div>
+</div><!--dashboard page-->

@@ -1,0 +1,59 @@
+@import '../../../assets/sass/_colors.scss';
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: -110px;
+
+    .close {
+        opacity: 1;
+    }
+}
+
+.mc-containter-login {
+    text-align: center;
+    background-color: $color-bg-grey;
+    background-size: cover;
+    height: 100%;
+
+
+    .mc-box-learn-more {
+        margin-top: 130px;
+        margin-left: auto;
+        margin-right: auto;
+        background: $color-bg;
+        width: 900px;
+        height: 540px;
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.3);
+
+        i {
+            margin-top: 30px;
+        }
+
+        article {
+            text-align: left;
+            width: 472px;
+            display: block;
+            padding-right: 65px;
+            padding-top: 35px;
+            padding-bottom: 35px;
+
+            .title {
+                font-size: 16px;
+            }
+
+            .blue {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                color: #0066cc;
+                font-size: 24px;
+            }
+
+            p {
+                color:$color-font;
+            }
+        }
+    }
+}

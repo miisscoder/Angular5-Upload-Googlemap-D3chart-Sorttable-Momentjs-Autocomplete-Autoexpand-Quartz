@@ -1,0 +1,190 @@
+﻿@import '../../../assets/sass/_colors.scss';
+
+.main-container {
+    height: 100%;
+    padding-top: 50px;
+
+    .content {
+        height: 100%;
+
+
+        .bg-content {
+            width: calc(100% - 50px);
+            height: calc(100vh - 50px);
+            overflow-y: auto;
+        }
+    }
+}
+
+.upload-container {
+    width: 100%;
+    min-height: calc(100vh - 50px);
+    padding: 0 20px;
+    position: relative;
+
+    .title {
+        margin-top: 30px;
+        margin-bottom: 25px;
+        font-size: 24px;
+        color: $color-font-title;
+    }
+
+    h3 {
+        color: #009966;
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    //left
+    .single {
+        margin-right: 10px;
+        background-color: $color-bg;
+        padding: 10px 30px;
+        width: calc(50% - 10px);
+        border-radius: 5px;
+
+        input {
+            padding-left: 15px;
+            color: $color-font-title;
+
+            &.blue-bg {
+                background-color: #edf5fc;
+            }
+        }
+
+        .group {
+            margin-bottom: 15px;
+
+            h2 {
+                margin-bottom: 10px;
+            }
+        }
+
+        .group-2 {
+            width: calc(50% - 10px);
+            margin-bottom: 15px;
+
+            h2 {
+                margin-bottom: 10px;
+            }
+        }
+
+        .date-input-group {
+            position: relative;
+
+            i {
+                position: absolute;
+                top: 8px;
+                right: 8px;
+            }
+
+            input {
+                padding: 0 10px;
+            }
+        }
+    }
+
+    .batch {
+        background-color: $color-bg;
+        width: calc(50% - 10px);
+        border-radius: 5px;
+        padding: 10px 30px;
+
+        .upload-box {
+            width: 100%;
+            height: 385px;
+            border: dotted 2px #3399cc;
+            border-radius: 5px;
+            position: relative;
+
+            img {
+                width: 75px;
+                height: 75px;
+                margin: 0 auto;
+            }
+
+            .txt {
+                margin-top: 60px;
+                margin-bottom: 50px;
+                font-size: 14px;
+
+                .txt-upload {
+                    position: relative;
+
+                    .blue {
+                        color: $color-font-blue;
+                        text-decoration: underline;
+
+                        &:hover, &:focus {
+                            cursor: pointer;
+                        }
+                    }
+
+                    input {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        color: transparent;
+                        border-color: transparent;
+                        background-color: transparent;
+                        opacity: 0;
+
+                        &:hover, &:focus {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+
+        .upload-box-2 {
+            width: 100%;
+            height: 385px;
+            border: dotted 2px #3399cc;
+            border-radius: 5px;
+            position: relative;
+
+            i.icon {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+            }
+
+            .progress-box {
+                margin: auto;
+            }
+
+            .title {
+                color: $color-font-title;
+                font-size: 14px;
+            }
+
+            .progress {
+                margin: 30px auto 10px;
+                border-radius: 3px;
+                background-color: #edf0f2;
+                height: 6px;
+                width: 100%;
+
+                .progress-bar {
+                    background-color: #00a963;
+                    border-radius: 3px;
+                }
+            }
+
+            .upload-info {
+                padding: 0 20px;
+            }
+        }
+    }
+
+    .buttons {
+        margin-top: 20px;
+
+        .right-btns {
+            .btn {
+                margin-left: 10px;
+            }
+        }
+    }
+}

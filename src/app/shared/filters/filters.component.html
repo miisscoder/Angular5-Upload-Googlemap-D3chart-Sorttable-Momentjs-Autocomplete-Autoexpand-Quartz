@@ -1,0 +1,96 @@
+<div class="filters-container">
+    <a href="javascript:;" class="filters-box flex center middle"
+       [ngClass]="{'hide': bFilter}"
+       (click)="bFilter = true">
+        <i class="icon filters"></i>
+    </a>
+    <div class="filters-bar" [ngClass]="{'hide': !bFilter}">
+        <div class="flex space-between middle filters-title">
+            <div class="flex start middle">
+                <i class="icon filters"></i>
+                <h3>Filter</h3>
+            </div>
+            <a href="javascript:;" class="close-btn" (click)="bFilter = false">
+                <i class="icon close"></i>
+            </a>
+        </div>
+        <div class="group">
+            <h3>Region</h3>
+            <div ngbDropdown class="d-inline-block">
+                <button class="btn-select-duration flex space-between middle" ngbDropdownToggle>
+                    <span class="txt">{{regions.current}}</span>
+                    <i class="icon drop-blue"></i>
+                </button>
+                <div ngbDropdownMenu>
+                    <button class="dropdown-item"
+                            *ngFor="let item of regions['options']"
+                            (click)="regions.current = item;filters.region = item;">
+                        {{item}}
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="group">
+            <h3>Operator</h3>
+            <div ngbDropdown class="d-inline-block little">
+                <button class="btn-select-duration flex space-between middle" ngbDropdownToggle>
+                    <span class="txt" >{{operators.current}}</span>
+                    <i class="icon drop-blue"></i>
+                </button>
+                <div ngbDropdownMenu>
+                    <button class="dropdown-item"
+                            *ngFor="let item of operators['options']"
+                            (click)="operators.current = item;filters.operator = item;">
+                        {{item}}
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="group">
+            <h3>Scheduled Date Range</h3>
+            <div [ngClass]="{'hide': filters['dateType'] != 'custom'}">
+                <div class="sub-title">Custom Date</div>
+                <div class="date-input-group">
+                    <input [owlDateTimeTrigger]="start" [owlDateTime]="start"
+                           placeholder="From"
+                           class="size-1" readonly="readonly"
+                           [value]="filters['start']"
+                           [(ngModel)]="filters['start']" />
+                    <span class="trigger" [owlDateTimeTrigger]="start">
+                        <i class="icon mini-calendar "></i>
+                    </span>
+                    <owl-date-time [pickerType]="'calendar'"
+                                   #start></owl-date-time>
+                </div>
+                <div class="date-input-group">
+                    <input [owlDateTimeTrigger]="end" [owlDateTime]="end"
+                           placeholder="To"
+                           class="size-1" readonly="readonly"
+                           [value]="filters['end']"
+                           [(ngModel)]="filters['end']" />
+                    <span class="trigger" [owlDateTimeTrigger]="end">
+                        <i class="icon mini-calendar "></i>
+                    </span>
+                    <owl-date-time [pickerType]="'calendar'"
+                                   #end></owl-date-time>
+                </div>
+                <a href="javascript:;" class="switch"
+                   (click)="filters['dateType'] = 'upcoming'">Select by Upcoming Date</a>
+            </div>
+            <div [ngClass]="{'hide': filters['dateType'] != 'upcoming'}">
+                <div class="sub-title">Next {{sliderVal}} days</div>
+                <div class="slider-wrapper">
+                    <nouislider [connect]="true" [min]="0" [max]="100" [(ngModel)]="sliderVal" 
+                                [step]="1" (ngModelChange)="onChange($event)"></nouislider>
+
+                </div>
+                <a href="javascript:;" class="switch"
+                   (click)="filters['dateType'] = 'custom'">Select Custom Date</a>
+            </div>
+        </div>
+        <div class="flex space-between middle btns">
+            <a href="javascript:;" class="btn btn-white" (click)="initFilter()" >Reset</a>
+            <a href="javascript:;" class="btn btn-blue" (click) ="apply()" >Apply Filters</a>
+        </div>
+    </div>
+</div>

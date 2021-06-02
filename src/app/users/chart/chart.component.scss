@@ -1,0 +1,127 @@
+@import '../../../assets/sass/_colors.scss';
+/*main container*/
+.main-container {
+  height: 100%;
+  padding-top: 50px;
+
+  .content {
+    height: calc(100vh - 50px);
+
+
+    .bg-content {
+      width: calc(100% - 50px);
+      height: calc(100vh - 50px);
+      overflow-y: auto;
+
+      .dashboard-container {
+        width: 100%;
+        min-height: calc(100vh - 50px);
+        position: relative;
+        /*link buttons*/
+        .link-group {
+          position: absolute;
+          top: 15px;
+          left: 15px;
+          z-index: 4;
+          border-radius: 6px;
+          background-color: $color-bg;
+          -moz-box-shadow: 0px 2px 2px #e8e8ec;
+          -webkit-box-shadow: 0px 2px 2px #e8e8ec;
+          box-shadow: 0px 2px 2px #e8e8ec;
+          overflow: hidden;
+
+          .nav-link {
+            height: 40px;
+            width: 80px;
+            padding: 0;
+
+            &:first-child {
+              border-right: 1px solid #eaeaea;
+            }
+
+            &:last-child {
+              border-left: 1px solid #eaeaea;
+            }
+
+            .middle-link {
+              border-left: 1px solid #eaeaea;
+              border-right: 1px solid #eaeaea;
+            }
+
+            i {
+              margin-right: 5px;
+            }
+
+            span {
+              font-size: 12px;
+              color: #999999;
+            }
+            /*active btn*/
+            &.active {
+              background-color: $color-bg-link-active;
+
+              span {
+                color: $color-font-white;
+              }
+
+              .map {
+                background-position: -178px -10px;
+              }
+
+              .list {
+                background-position: -10px -216px;
+              }
+
+              .chart {
+                background-position: -126px -138px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.chart-container {
+    padding: 75px 15px;
+    width: 100%;
+    position: relative;
+
+    .filters {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+    }
+
+
+    #chartdiv {
+        width: 100%;
+        height: 500px;
+    }
+
+
+    .chartbox {
+        font-size: 12px;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+
+        h3 {
+            position: absolute;
+            top: 14px;
+            left: 180px;
+        }
+
+        .bg {
+            position: absolute;
+            width: 100%;
+            height: 40px;
+            background: #e4e7ee;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    }
+}

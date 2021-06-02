@@ -1,0 +1,44 @@
+<div class="wrap-table ">
+    <!-- table head start -->
+    <div class="table-head flex space-between middle">
+        <div *ngFor="let column of options.columns" class="table-col"
+             [style.width]="column.width" [ngStyle]="column.style">
+            <div class="inner">
+                <div *ngIf="column.key === 'checkbox'" class="checkbox-input">
+                    <input type="checkbox" [(ngModel)]="bCheckAll" (change)="checkAll()" />
+                    <i class="icon-checkbox"></i>
+                </div>
+                <span *ngIf="column.key != 'checbox'" class="col-title">{{column.title}}</span>
+            </div>
+        </div>
+    </div>
+    <!-- table head end -->
+    <!-- table body start -->
+    <div #scrollMe>
+        <div class="table-body"
+             infiniteScroll
+             [infiniteScrollDistance]="1"
+             [infiniteScrollThrottle]="50"
+             (scrolled)="onScrollDown()">
+            <ng-container *ngFor="let row of data; let index = index">
+                <!-- table row start -->
+                <div [ngClass]="{'hide': !row._visible }">
+                    <div *ngIf="row._type == 0" class="table-row group-row">
+                        <h3>{{row.well}}</h3>
+                    </div>
+                    <div *ngIf="row._type == 1" class="table-row flex space-between middle">
+                        <div class="table-col ellipsiswrap {{column.type}}-col"
+                             *ngFor="let column of options.columns" [style.width]="column.width" [ngStyle]="column.style">
+                            {{row[column.key]}}
+                        </div>
+                    </div>
+                </div>
+                <!-- table row end -->
+            </ng-container>
+        </div>
+    </div>
+    <div *ngIf="sumData > loadData" class="load">
+        Loading more items...
+    </div>
+    <!-- table body end -->
+</div>

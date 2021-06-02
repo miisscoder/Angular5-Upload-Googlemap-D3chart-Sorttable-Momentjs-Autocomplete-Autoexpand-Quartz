@@ -1,0 +1,92 @@
+@import '../../../assets/sass/colors';
+
+//table head
+.wrap-table {
+    padding: 70px 15px 10px 15px;
+
+    .load {
+        font-size: 12px;
+        color: $color-font-grey;
+        height:40px;
+    }
+}
+
+
+.table-col {
+    flex-grow: 1;
+    font-size: 12px;
+
+    .inner {
+        display: flex;
+        align-items: center;
+
+        &.sort {
+            &:hover, &:focus {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.table-head {
+    background-color: $color-bg-table-header;
+    height: 30px;
+    font-family: 'Gotham-medium';
+    font-weight: 500;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 0 10px;
+    color:$color-font-title;
+    .icon.sort-arrow {
+        margin-left: 5px;
+
+        &.active {
+            -webkit-transform: rotate(180deg); /* Chrome and other webkit browsers */
+            -moz-transform: rotate(180deg); /* FF */
+            -o-transform: rotate(180deg); /* Opera */
+            -ms-transform: rotate(180deg); /* IE9 */
+            transform: rotate(180deg);
+        }
+    }
+}
+
+// table body
+.table-body {
+    font-weight: 400;
+
+    .table-row {
+        background-color: $color-bg;
+        height: 30px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        padding: 0 10px;
+
+        .circle {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+
+            &.green {
+                background-color: $color-green;
+            }
+
+            &.orange {
+                background-color: $color-orange;
+            }
+
+            &.yellow {
+                background-color: $color-yellow;
+            }
+
+            &.purple {
+                background-color: $color-purple;
+            }
+
+            &.blue {
+                background-color: $color-blue;
+            }
+        }
+    }
+}

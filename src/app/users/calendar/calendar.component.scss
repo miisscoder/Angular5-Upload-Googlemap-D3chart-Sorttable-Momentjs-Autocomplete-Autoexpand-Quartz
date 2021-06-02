@@ -1,0 +1,71 @@
+﻿@import '../../../assets/sass/_colors.scss';
+/*main container*/
+.main-container {
+    height: 100%;
+    padding-top:50px;
+
+    .content {
+        height: 100%;
+
+
+        .bg-content {
+            width: calc(100% - 50px);
+            
+    height:calc(100vh - 50px);
+    overflow-y:auto;
+        }
+    }
+}
+
+.calendar-container {
+    width: 100%;
+    min-height: calc(100vh - 50px);
+    position: relative;
+
+    .d-inline-block {
+        width: 150px;
+        margin-left:20px;
+
+        .btn-select-duration {
+            width: 100%;
+            margin: 0;
+            padding: 0 5px 0 12px;
+            height: 30px;
+            border-radius: 15px;
+            background-color: $color-bg;
+            box-shadow: none;
+            border: 1px solid #cccccc;
+
+            span {
+                color: $color-font;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                -o-text-overflow: ellipsis;
+                overflow: hidden;
+                text-align: left;
+                width: calc(100% - 40px);
+            }
+        }
+    }
+
+    /*table box*/
+    .table-box {
+        width: 100%;
+        padding: 20px;
+
+        i.company-logo {
+            margin-right: 10px;
+        }
+
+        .btns {
+            .btn {
+                margin-left: 10px;
+                padding: 0 15px;
+
+                i {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}

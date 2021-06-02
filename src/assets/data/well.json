@@ -1,0 +1,26 @@
+﻿[
+  {
+    "well": "RANGER C-4-7-4301H",
+    "surfaceLat": "16.808742",
+    "surfaceLong": "-95.808742",
+    "bottomholeLat": "16.808742",
+    "bottomholeLong": "-95.808742",
+    "TVD": "info"
+  },
+  {
+    "well": "RANGER C-4-7-4303H",
+    "surfaceLat": "16.808742",
+    "surfaceLong": "-95.808742",
+    "bottomholeLat": "16.808742",
+    "bottomholeLong": "-95.808742",
+    "TVD": "info"
+  },
+  {
+    "well": "RANGER C-4-7-4305H",
+    "surfaceLat": "16.808742",
+    "surfaceLong": "-95.808742",
+    "bottomholeLat": "16.808742",
+    "bottomholeLong": "-95.808742",
+    "TVD": "info"
+  }
+]

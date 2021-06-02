@@ -1,0 +1,101 @@
+/**
+css material
+**/
+.mc-full-width{
+    width:100%;
+}
+.mat-form-field-underline{
+    display: none;
+}
+
+.mat-form-field-subscript-wrapper {    
+    margin-top: 0em;
+}
+
+.mat-checkbox-checked.mat-accent 
+.mat-checkbox-background, 
+.mat-checkbox-indeterminate.mat-accent 
+.mat-checkbox-background {
+    background-color: #286090;
+    border-width: 0.09em;
+    border-radius: 5px;
+    border-color: #056DAE;
+}
+.mat-form-field-invalid .mat-form-field-label {
+    color: #333;
+}
+.mat-form-field {
+    .mat-form-field-label.mat-form-field-empty {
+        padding: 15px;
+    }
+    .mat-form-field-underline {
+        height: 0px;
+        background: transparent;
+        .mat-form-field-ripple {
+            background: transparent;
+        }
+    }
+}
+.mat-form-field.mat-focused {
+    .mat-select, .mat-input-element {
+        border: 1px solid #056DAE;
+    }
+    .mat-form-field-label {
+        padding: 0;
+        &.mat-form-field-empty {
+            padding: 0;
+        }
+    }
+}
+.mat-select {
+    background-color: #eee;
+    height: 50px;
+    border-radius: 6px;
+    padding: 15px;
+    .mat-select-value {
+        line-height: 19px;
+    }
+    .mat-select-arrow {
+        background-image: url('data:image/svg+xml;charset=US-ASCII,<%3Fxml%20version%3D"1.0"%20encoding%3D"UTF-8"%20standalone%3D"no"%3F>%0A<svg%20width%3D"15px"%20height%3D"8px"%20viewBox%3D"0%200%2015%208"%20version%3D"1.1"%20xmlns%3D"http%3A//www.w3.org/2000/svg"%20xmlns%3Axlink%3D"http%3A//www.w3.org/1999/xlink"%20xmlns%3Asketch%3D"http%3A//www.bohemiancoding.com/sketch/ns">%0A%20%20%20%20<%21--%20Generator%3A%20Sketch%203.4.1%20%2815681%29%20-%20http%3A//www.bohemiancoding.com/sketch%20-->%0A%20%20%20%20<title>Chevron</title>%0A%20%20%20%20<desc>Created%20with%20Sketch.</desc>%0A%20%20%20%20<defs></defs>%0A%20%20%20%20<g%20id%3D"Toolkit"%20stroke%3D"none"%20stroke-width%3D"1"%20fill%3D"none"%20fill-rule%3D"evenodd"%20sketch%3Atype%3D"MSPage">%0A%20%20%20%20%20%20%20%20<g%20id%3D"Dropdowns"%20sketch%3Atype%3D"MSArtboardGroup"%20transform%3D"translate%28-878.000000%2C%20-122.000000%29"%20fill%3D"%23056DAE">%0A%20%20%20%20%20%20%20%20%20%20%20%20<g%20id%3D"Dropdown-Grey"%20sketch%3Atype%3D"MSLayerGroup"%20transform%3D"translate%28570.000000%2C%20101.000000%29">%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20<g%20id%3D"Dropdown-Default"%20sketch%3Atype%3D"MSShapeGroup">%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20<path%20d%3D"M312%2C32%20L312%2C29.6917048%20L316.989689%2C25.0246591%20L312%2C20.3577556%20L312%2C18%20L318.461538%2C24.1555486%20L318.461538%2C25.8443093%20L312%2C32"%20id%3D"Chevron"%20transform%3D"translate%28315.230769%2C%2025.000000%29%20rotate%28-270.000000%29%20translate%28-315.230769%2C%20-25.000000%29%20"></path>%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20</g>%0A%20%20%20%20%20%20%20%20%20%20%20%20</g>%0A%20%20%20%20%20%20%20%20</g>%0A%20%20%20%20</g>%0A</svg>');
+        background-repeat: no-repeat;
+        background-position: right 2px center;
+        height: 20px;
+        width: 20px;
+        border: none;
+    }
+}
+
+input.mat-input-element {
+    background-color: #eee;
+    height: 50px;
+    border-radius: 6px;   
+}
+
+textarea.mat-input-element {
+    background-color: #eee;
+    border-radius: 6px;
+    padding: 15px;
+}
+
+.mat-checkbox {
+    .mat-checkbox-label {
+        color: #696969;
+        font-weight: 400;
+    }
+    .mat-checkbox-frame {
+        border-radius: 6px;
+    }
+    &.mat-checkbox-checked {
+        .mat-checkbox-label {
+            color: #056DAE;
+        }
+        .mat-checkbox-background {
+            border-radius: 6px;
+            background-color: #056DAE;
+        }
+    }
+}
+
+.mat-form-field-label:not(.mat-form-field-empty) {
+    padding: 0;
+}

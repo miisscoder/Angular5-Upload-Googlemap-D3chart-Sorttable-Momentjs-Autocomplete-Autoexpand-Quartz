@@ -1,0 +1,70 @@
+<!--main page-->
+<div class="main-container">
+    <!--header bar-->
+    <app-header></app-header>
+    <div class="content flex space-between stretch">
+        <!--side bar-->
+        <app-side></app-side>
+        <!--main content-->
+        <div class="bg-content">
+            <div class="dashboard-container">
+                <!--link buttons-->
+                <div class="link-group flex center middle">
+                    <a href="javascript:;" class="nav-link flex center middle"
+                       (click)="goto('map')"
+                       routerLink="/main/dashboard/map"
+                       routerLinkActive="active">
+                        <i class="icon map"></i>
+                        <span>Map</span>
+                    </a>
+                    <a href="javascript:;" class="nav-link middle-link flex center middle"
+                       (click)="goto('list')"
+                       routerLink="/main/dashboard/list"
+                       routerLinkActive="active">
+                        <i class="icon list"></i>
+                        <span>List</span>
+                    </a>
+                    <a href="javascript:;" class="nav-link flex center middle"
+                       (click)="goto('chart')"
+                       routerLink="/main/dashboard/chart"
+                       routerLinkActive="active">
+                        <i class="icon chart"></i>
+                        <span>Chart</span>
+                    </a>
+                </div>
+                <!--main content-->
+                <div class="chart-container">
+                    <!--<div *ngIf="showChartt" id="chartdiv" [style.width.%]="100" [style.height.px]="500"></div>-->
+                    <div class="chartbox">
+                        <div class="bg flex start center">
+                            <h3>Today</h3>
+                            <div class="x"></div>
+                            <div class="td td-0"></div>
+                            <div class="td td-1"></div>
+                            <div class="td td-2"></div>
+                            <div class="td td-3"></div>
+                            <div class="td td-4"></div>
+                            <div class="td td-5"></div>
+                            <div class="td td-6"></div>
+                            <div class="td td-7"></div>
+                            <div class="td td-8"></div>
+                            <div class="td td-9"></div>
+                            <div class="td td-10"></div>
+                        </div>
+                        <div class="bg-table">
+                        </div>
+                        <div class="titles">
+                        </div>
+                    </div>
+                    <div class="filters">
+                        <app-filters (onApply)="onApply($event)"></app-filters>
+                    </div>
+                </div>
+            </div>
+            <!--dashboard-container-->
+        </div>
+        <!--bg-content-->
+    </div>
+    <!--content-->
+</div>
+<!--dashboard page-->

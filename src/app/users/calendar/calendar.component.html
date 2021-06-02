@@ -1,0 +1,54 @@
+﻿<!--main page-->
+<div class="main-container">
+    <app-header></app-header>    <!--header bar-->
+    <div class="content flex space-between stretch">
+        <!--side bar-->
+        <app-side></app-side>
+        <!--main content-->
+        <div class="bg-content">
+            <div class="calendar-container flex space-between stretch">
+                <div class="table-box">
+                    <div class="flex space-between middle">
+                        <div class="flex start middle">
+                            <i class="icon company-logo"></i>
+                            <span class="title">Eggon Mobil</span>
+                        </div>
+                        <div class="btns flex space-between middle">
+                            <div ngbDropdown class="d-inline-block">
+                                <button class="btn-select-duration flex space-between middle" ngbDropdownToggle>
+                                    <span class="txt">Next {{next.current}} days</span>
+                                    <i class="icon drop-blue"></i>
+                                </button>
+                                <div ngbDropdownMenu>
+                                    <button class="dropdown-item"
+                                            *ngFor="let item of next['options']"
+                                            (click)="next.current = item; filter();">
+                                        Next {{item}} days
+                                    </button>
+                                </div>
+                            </div>
+                            <div ngbDropdown class="d-inline-block">
+                                <button class="btn-select-duration flex space-between middle" ngbDropdownToggle>
+                                    <span class="txt">{{operators.current}}</span>
+                                    <i class="icon drop-blue"></i>
+                                </button>
+                                <div ngbDropdownMenu>
+                                    <button class="dropdown-item"
+                                            *ngFor="let item of operators['options']"
+                                            (click)="operators.current = item; filter();">
+                                        {{item}}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <app-calendar-table [data]="tableData" [sumData]="tableData?.length"></app-calendar-table>
+                </div>
+            </div>
+            <!--company page-->
+        </div>
+        <!--bg-content-->
+    </div>
+    <!--content-->
+</div>
+<!--main page-->

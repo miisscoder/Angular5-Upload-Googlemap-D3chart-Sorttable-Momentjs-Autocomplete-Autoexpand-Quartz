@@ -1,0 +1,168 @@
+﻿@import '../../../assets/sass/_colors.scss';
+/*main container*/
+.main-container {
+    height: 100%;
+    padding-top:50px;
+
+    .content {
+        height: 100%;
+
+
+        .bg-content {
+            width: calc(100% - 50px);
+            
+    height:calc(100vh - 50px);
+    overflow-y:auto;
+        }
+    }
+}
+
+.company-container {
+    width: 100%;
+    min-height: calc(100vh - 50px);
+    position: relative;
+    /*aside*/
+    aside {
+        width: 250px;
+        height: inherit;
+        background-color: #2f3340;
+        padding: 5px;
+        position: relative;
+
+        .menus {
+            margin-bottom: 40px;
+
+            .menu-card {
+                padding: 7.5px 15px;
+
+                &.expand {
+                    background-color: #262933;
+                    border-radius: 5px;
+                    padding: 10px 15px;
+                }
+
+                &.active {
+                    h3 {
+                        color: $color-font-white;
+                    }
+
+                    h2 {
+                        color: #cccccc;
+                    }
+                }
+
+                h3 {
+                    font-size: 14px;
+                    color: #999999;
+                    margin-bottom: 5px;
+                }
+
+                h2 {
+                    font-size: 11px;
+                    color: #666699;
+                }
+
+                .btns {
+                    margin-top: 10px;
+
+                    i {
+                        margin-right: 15px;
+                    }
+                }
+            }
+        }
+        /*add-company*/
+        .btn-add-company {
+            position: absolute;
+            width: 136px;
+            bottom: 15px;
+            padding: 0 15px 0 7px;
+            left: calc(50% - 68px);
+        }
+    }
+
+    .table-box {
+        width: calc(100% - 250px);
+        padding: 20px;
+
+        i.company-logo {
+            margin-right: 10px;
+        }
+
+        .btns {
+            .btn {
+                margin-left: 10px;
+                padding: 0 15px;
+
+                i {
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .card-box {
+            width: calc(100% + 15px);
+            margin: 0 -7.5px;
+            margin-top: 25px;
+
+            .flex-item {
+                width:33.33%;
+                margin-bottom: 15px;
+                padding-right: 7.5px;
+                padding-left: 7.5px;
+            }
+
+            .cardthis {
+                background-color: $color-bg;
+                border-radius: 5px;
+                padding: 15px;
+                width: 100%;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                    border: 1px solid #e4e7ee;
+                    border-radius: 15px;
+                    margin-right: 10px;
+                }
+
+                .no {
+                    width: 20px;
+                    height: 20px;
+                    background-color: #e4e7ee;
+                    border-radius: 15px;
+                    color: $color-font-title;
+                }
+
+                .txts {
+                    color: $color-font-title;
+
+                    h3 {
+                        font-size: 14px;
+                        margin-bottom: 5px;
+                    }
+
+                    .sub {
+                        font-size: 14px;
+                        margin-bottom: 15px;
+                    }
+
+                    .blue {
+                        color: #0066cc;
+                        margin-bottom: 10px;
+                    }
+
+                    .txt {
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    app-add-contact {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}

@@ -1,0 +1,46 @@
+﻿@import '../../../assets/sass/_colors.scss';
+/*main container*/
+.main-container {
+    height: 100%;
+    padding-top: 50px;
+
+    .content {
+        height: 100%;
+
+
+        .bg-content {
+            width: calc(100% - 50px);
+            height: calc(100vh - 50px);
+            overflow-y: auto;
+        }
+    }
+}
+
+/*main container*/
+.main-container {
+    height: 100%;
+    padding-top: 50px;
+
+    .content {
+        height: 100%;
+
+
+        .bg-content {
+            width: calc(100% - 50px);
+            height: calc(100vh - 50px);
+            overflow-y: auto;
+        }
+    }
+}
+
+.search-result-container {
+    width: 100%;
+    min-height: calc(100vh - 50px);
+    position: relative;
+
+    h1 {
+        font-size: 40px;
+        text-align: center;
+        margin: 40px auto;
+    }
+}

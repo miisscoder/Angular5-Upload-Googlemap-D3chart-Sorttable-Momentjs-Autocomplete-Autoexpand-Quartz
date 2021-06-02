@@ -1,0 +1,46 @@
+<div class="side-container flex column column-space-between">
+    <div class="side-top">
+        <div>
+            <a href="javascript:;" class="nav-link flex center middle"
+               (click)="goto('/main/dashboard/map')"
+               routerLink="/main/dashboard"
+               routerLinkActive="active">
+                <i class="icon dashboard"></i>
+            </a>
+        </div>
+        <div>
+            <a href="javascript:;" class="nav-link flex center middle"
+               (click)="goto('/main/company')"
+               routerLink="/main/company"
+               routerLinkActive="active">
+                <i class="icon company"></i>
+            </a>
+        </div>
+        <div>
+            <a href="javascript:;" class="nav-link flex center middle"
+               (click)="goto('/main/calendar')"
+               routerLink="/main/calendar"
+               routerLinkActive="active">
+                <i class="icon calendar"></i>
+            </a>
+        </div>
+        <!--<div>
+            <a href="javascript:;" class="nav-link flex center middle">
+                <i class="icon help"></i>
+            </a>
+        </div>
+        <div>
+            <a href="javascript:;" class="nav-link flex center middle">
+                <i class="icon settings"></i>
+            </a>
+        </div>-->
+    </div>
+    <div class="side-bottom">
+        <div class="flex center middle profile">
+            <img class="img-circle" src="../../../assets/img/q-profile.jpg" alt="" />
+        </div>
+        <div class="nav-link flex center middle">
+            <a href="javascript:;" (click)="signOut()"><i class="icon export"></i></a>
+        </div>
+    </div>
+</div>

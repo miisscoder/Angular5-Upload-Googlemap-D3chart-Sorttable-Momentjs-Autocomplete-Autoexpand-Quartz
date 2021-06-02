@@ -1,0 +1,47 @@
+<div class="mc-containter-login">
+  <!-- login box -->
+  
+  <form *ngIf="!(loading | async)" (ngSubmit)="submit()" [formGroup]="form" novalidate>
+    <div class="mc-box-login" [ngClass]="{'error-log': error | async}">
+        <img src="../../../assets/img/q-login-top.jpg" alt="" />
+        <div class="mc-box-item mc-title">
+            <h1>Quartz Energy</h1>
+            <h2>Offset Operator Frac Schedule</h2> 
+        </div>
+        <div class="mc-box-item mc-user">
+            <div class="mc-full-width">
+                <div class="input-icon-group">
+                    <i class="icon person"></i>
+                    <input [(ngModel)]="userIdValue" placeholder="{{jsonUserName}}" class="text-input" type="text" formControlName="userId">
+                </div>          
+                <span class="mc-error" *ngIf="error | async">
+                    {{jsonUserName}} "{{form.get('userId').value}}" doesn't exist
+                </span>
+            </div>
+        </div>
+        <div class="mc-box-item mc-password">
+            <div class="mc-full-width">
+                <div class="input-icon-group">
+                    <i class="icon pswd"></i>
+                    <input [(ngModel)]="passwordValue" placeholder="{{jsonPassword}}" 
+                           class="text-input" type="password" formControlName="password">
+                </div> 
+                <span class="mc-error" *ngIf="error | async">
+                        Input error message {{jsonPassword}}
+                    </span>
+                </div>
+        </div>
+        <div class="mc-box-item mc-button">
+          <input type="submit" class="btn" [disabled]="form.invalid" value="{{jsonSubmit}}"/>        
+        </div>
+    </div>
+      <div class="bottom-links flex space-between middle">
+          <a href="javascript:;" routerLink="/learn-more">Learn more</a>
+          <a href="javascript:;">Request Access</a>
+      </div>
+  </form>
+ 
+  <div>
+    <div *ngIf="loading | async"></div>
+  </div>
+</div>

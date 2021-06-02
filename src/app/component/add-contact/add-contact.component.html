@@ -1,0 +1,118 @@
+<div class="add-contact-container" *ngIf="bFilter">
+    <div class="add-contact-bar">
+        <div class="flex space-between middle add-contact-title">
+            <div class="flex start middle">
+                <i class="icon blue-add-user"></i>
+                <h3>Add Contact</h3>
+            </div>
+            <a href="javascript:;" class="close-btn" (click)="close()">
+                <i class="icon close"></i>
+            </a>
+        </div>
+        <!--drop and select file,drop need drop carefully to right position-->
+        <div class="upload-box-group">
+            <div class="upload-box flex center middle"
+                 [ngClass]="{'hide': uploader?.queue?.length > 0}">
+                <div ng2FileDrop
+                     [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+                     (fileOver)="fileOverBase($event)"
+                     [uploader]="uploader"
+                     class="drop-zone flex column column-center">
+                    <i class="icon man"></i>
+                    <div class="txt">
+                        Drag & Drop Profile Pic file here or
+                        <span class="txt-upload">
+                            <span class="blue">
+                                browse from your computer
+                            </span>
+                            <input type="file" ng2FileSelect [uploader]="uploader"
+                                   placeholder="browse from your computer" />
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!--after select files-->
+            <div class="upload-box-2 flex center middle"
+                 *ngIf="uploader?.queue?.length > 0">
+                <a href="javascript:;"
+                   (click)="uploader.clearQueue();">
+                    <i class="icon grey-trash"></i>
+                </a>
+                <div *ngFor="let item of uploader.queue">
+                    <div class="progress-box">
+                        <div class="text-center title ">{{ item.file?.name }}</div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" 
+                                 [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+                        </div>
+                        <div class="text-center upload-info ">
+                            {{uploader.progress + '%'}} Completed -
+                            {{uploader.progress/100 * item.file?.size/1024}}/
+                            {{item.file?.size/1024}}K
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="group">
+            <h3>Contact Order</h3>
+            <div ngbDropdown class="d-inline-block">
+                <button class="btn-select-duration flex space-between middle" ngbDropdownToggle>
+                    <span class="txt">{{orders.current}}</span>
+                    <i class="icon drop-blue"></i>
+                </button>
+                <div ngbDropdownMenu>
+                    <button class="dropdown-item"
+                            *ngFor="let item of orders['options']"
+                            (click)="orders.current = item">
+                        {{item}}
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="group">
+            <h3>Full Name</h3>
+            <input [value]="contact['name']"
+                   [(ngModel)]="contact['name']" />
+        </div>
+        <div class="group">
+            <h3>Email</h3>
+            <input [value]="contact['email']"
+                   [(ngModel)]="contact['email']" />
+
+        </div>
+        <div class="group">
+            <h3>Phone</h3>
+            <input [value]="contact['phone']"
+                   [(ngModel)]="contact['phone']" />
+
+        </div>
+        <div class="group">
+            <h3>City</h3>
+            <input [value]="contact['city']"
+                   [(ngModel)]="contact['city']" />
+        </div>
+        <div class="group">
+            <h3>State</h3>
+            <div ngbDropdown class="d-inline-block">
+                <button class="btn-select-duration flex space-between middle" ngbDropdownToggle>
+                    <span class="txt">{{states.current}}</span>
+                    <i class="icon drop-blue"></i>
+                </button>
+                <div ngbDropdownMenu>
+                    <button class="dropdown-item"
+                            *ngFor="let item of states['options']"
+                            (click)="states.current = item">
+                        {{item}}
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="flex space-between middle btns">
+            <a href="javascript:;" class="btn btn-white" (click)="close();uploader.cancelAll();">Cancel</a>
+            <button href="javascript:;" class="btn btn-blue" 
+                    [disabled]="!uploader.getNotUploadedItems().length "
+                    (click)="uploader.uploadAll();submit();">Submit</button>
+        </div>
+    </div>
+</div>

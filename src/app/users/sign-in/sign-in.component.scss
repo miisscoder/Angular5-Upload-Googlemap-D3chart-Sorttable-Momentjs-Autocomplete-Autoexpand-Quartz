@@ -1,0 +1,139 @@
+@import '../../../assets/sass/_colors.scss';
+
+.mc-containter-login {
+    text-align: center;
+    background-color: $color-bg-grey;
+    position: relative;
+    min-height: inherit;
+    width: 100%;
+    /*bottom two links*/
+    .bottom-links {
+        width: 380px;
+        margin: 0 auto;
+
+        a {
+            text-decoration: underline;
+        }
+    }
+    /*login box*/
+    .mc-box-login {
+        margin-top: 167px;
+        background: $color-bg;
+        width: 380px;
+        /*height: 430px;*/
+        display: inline-block;
+        text-align: center;
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.3);
+
+        .mc-box-item {
+            display: inline-block;
+            width: 300px;
+            margin: 0 auto;
+
+
+            &.mc-title {
+                padding-top: 25px;
+                text-align: center;
+
+                h1 {
+                    font-size: 20px;
+                }
+
+                h2 {
+                    padding-top: 5px;
+                    font-size: 16px;
+                }
+            }
+
+            &.mc-user {
+                padding-top: 25px;
+            }
+
+            &.mc-password {
+                padding-top: 15px;
+            }
+
+            &.mc-button {
+                padding-top: 20px;
+                padding-bottom: 30px;
+
+                input {
+                    height: 40px;
+                    width: 100%;
+                    float: left;
+                    font-size: 16px;
+                    background-color: #006bd5;
+                    color: $color-font-white;
+                    border-radius: 20px;
+
+                    &.btn[disabled] {
+                        background-color: $color-btn;
+                        color: $color-font-grey;
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .input-icon-group {
+                position: relative;
+
+                i {
+                    position: absolute;
+                    top: 9px;
+                    left: 15px;
+                }
+
+                input {
+                    background-color: #f0f3f6;
+                    border: none;
+                    padding-left: 40px;
+                    height: 35px;
+                }
+            }
+        }
+    }
+
+    .bottom-links {
+        padding-top: 30px;
+    }
+}
+
+/*details*/
+.mat-input-element {
+    background: #eee;
+    height: 50px;
+    width: 100%;
+    float: left;
+    border: 1px solid #fff;
+    box-shadow: none;
+    font-size: 16px;
+    padding: 0px 20px;
+    border-radius: 6px;
+
+    &:focus {
+        box-shadow: none;
+        border: 1px solid #056DAE;
+    }
+}
+
+.mc-btn-disable {
+    background: #545b62;
+    color: #ddd;
+}
+
+.error-log .text-input {
+    border-color: #f44336;
+}
+
+.mc-error {
+    text-align: left;
+    color: #d60000;
+    float: left;
+    font-size: 12px;
+    padding-top: 10px;
+    width: 100%;
+    height: 20px;
+    font-weight: bold; // ff1 fix font weight: bold
+}

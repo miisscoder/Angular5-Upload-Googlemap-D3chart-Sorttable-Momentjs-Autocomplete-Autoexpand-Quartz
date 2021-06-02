@@ -1,0 +1,50 @@
+
+<!--main page-->
+<div class="main-container">
+    <!--header bar-->
+    <app-header></app-header>
+    <div class="content flex space-between stretch">
+        <!--side bar-->
+        <app-side></app-side>
+        <!--main content-->
+        <div class="bg-content">
+            <div class="dashboard-container">
+                <!--link buttons-->
+                <div class="link-group flex center middle">
+                    <a href="javascript:;" class="nav-link flex center middle"
+                       (click)="goto('map')"
+                       routerLink="/main/dashboard/map"
+                       routerLinkActive="active">
+                        <i class="icon map"></i>
+                        <span>Map</span>
+                    </a>
+                    <a href="javascript:;" class="nav-link middle-link flex center middle"
+                       (click)="goto('list')"
+                       routerLink="/main/dashboard/list"
+                       routerLinkActive="active">
+                        <i class="icon list"></i>
+                        <span>List</span>
+                    </a>
+                    <a href="javascript:;" class="nav-link flex center middle"
+                       (click)="goto('chart')"
+                       routerLink="/main/dashboard/chart"
+                       routerLinkActive="active">
+                        <i class="icon chart"></i>
+                        <span>Chart</span>
+                    </a>
+                </div>
+                <!--main content-->
+                <div class="list-container">
+                    <div class="filters"><app-filters (onApply)="onApply($event)"></app-filters></div>
+                    <app-sort-table [data]="filtered"></app-sort-table>
+                </div>
+                <!--list-container-->
+            </div>
+            <!--dashboard-container-->
+        </div>
+        <!--bg-content-->
+    </div>
+    <!--content-->
+</div>
+<!--dashboard page-->
+

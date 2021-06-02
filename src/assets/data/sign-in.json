@@ -1,0 +1,39 @@
+{
+  "signin": {
+    "type": "container",
+    "title": "Sign in",
+    "description": "Sign in page",
+    "elements": {
+      "pageTitle": {
+        "type": "text",
+        "title": "Sign On"
+      },
+      "username": {
+        "type": "input",
+        "hint": "Username",
+        "messages": {
+          "required": "Please enter your User name."
+        }
+      },
+      "password": {
+        "type": "input",
+        "hint": "Password",
+        "messages": {
+          "required": "Please enter your password."
+        }
+      },
+      "submit": {
+        "type": "submit",
+        "title": "Sign On"
+      }
+    },
+    "user":{
+      "userId":"user@user",
+      "password":"userhere"
+    },
+    "admin":{
+      "userId":"admin@admin.com",
+      "password":"12345678"
+    }
+  }
+}

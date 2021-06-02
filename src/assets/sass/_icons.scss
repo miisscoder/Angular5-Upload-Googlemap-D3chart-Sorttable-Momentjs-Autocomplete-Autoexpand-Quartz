@@ -1,0 +1,228 @@
+﻿
+/*.sprite-icon{ 
+    background-image:url(sprite.png); 
+    background-image: -webkit-image-set( url('sprite.png') 1x, url('sprite@2x.png') 2x ); 
+}*/
+
+
+.icon {
+    background-image: url('../img/css_sprites.png');
+    display: inline-block;
+
+    &.add {
+        width: 20px;
+        height: 20px;
+        background-position: -138px -10px;
+    }
+
+    &.add-user {
+        width: 22px;
+        height: 22px;
+        background-position: -55px -88px;
+    }
+
+    &.blue-add-user {
+        width: 22px;
+        height: 22px;
+        background-position: -247px -88px;
+    }
+
+    &.calendar {
+        width: 18px;
+        height: 20px;
+        background-position: -50px -138px;
+    }
+
+    &.calendar_active {
+        width: 18px;
+        height: 20px;
+        background-position: -88px -138px;
+    }
+
+    &.chart {
+        width: 19px;
+        height: 18px;
+        background-position: -10px -178px;
+    }
+
+    &.chart-active {
+        width: 19px;
+        height: 18px;
+        background-position: -126px -138px;
+    }
+
+    &.close {
+        width: 20px;
+        height: 20px;
+        background-position: -87px -214px;
+    }
+
+    &.company {
+        width: 18px;
+        height: 18px;
+        background-position: -178px -126px;
+    }
+
+    &.company-active {
+        width: 18px;
+        height: 18px;
+        background-position: -166px -214px;
+    }
+
+    &.company-logo {
+        width: 40px;
+        height: 40px;
+        background-position: -78px -10px;
+    }
+
+    &.dashboard {
+        width: 22px;
+        height: 22px;
+        background-position: -128px -214px;
+    }
+
+    &.dashboard-active {
+        width: 20px;
+        height: 20px;
+        background-position: -138px -50px;
+    }
+
+    &.export {
+        width: 20px;
+        height: 20px;
+        background-position: -10px -138px;
+    }
+
+    &.filter {
+        width: 21px;
+        height: 21px;
+        background-position: -97px -88px;
+    }
+
+    &.filters {
+        width: 16px;
+        height: 16px;
+        background-position: -216px -126px;
+    }
+
+    &.grey-edit {
+        width: 18px;
+        height: 17px;
+        background-position: -87px -178px;
+    }
+
+    &.grey-msg {
+        width: 20px;
+        height: 14px;
+        background-position: -125px -178px;
+    }
+
+    &.grey-trash {
+        width: 16px;
+        height: 18px;
+        background-position: -216px -50px;
+    }
+
+    &.help {
+        width: 18px;
+        height: 18px;
+        background-position: -49px -178px;
+    }
+
+    &.list {
+        width: 17px;
+        height: 14px;
+        background-position: -47px -216px;
+    }
+
+    &.list-active {
+        width: 17px;
+        height: 14px;
+        background-position: -10px -216px;
+    }
+
+    &.logo {
+        width: 25px;
+        height: 30px;
+        background-position: -10px -88px;
+    }
+
+    &.logo-m {
+        width: 48px;
+        height: 58px;
+        background-position: -10px -10px;
+    }
+
+    &.map {
+        width: 18px;
+        height: 19px;
+        background-position: -178px -49px;
+    }
+
+    &.map-active {
+        width: 18px;
+        height: 19px;
+        background-position: -178px -10px;
+    }
+
+    &.mini-calendar {
+        width: 14px;
+        height: 15px;
+        background-position: -252px -10px;
+    }
+
+    &.msg {
+        width: 20px;
+        height: 14px;
+        background-position: -165px -178px;
+    }
+
+    &.operating {
+        width: 16px;
+        height: 14px;
+        background-position: -216px -162px;
+    }
+
+    &.person {
+        width: 16px;
+        height: 18px;
+        background-position: -216px -88px;
+    }
+
+    &.pswd {
+        width: 16px;
+        height: 20px;
+        background-position: -216px -10px;
+    }
+
+    &.search {
+        width: 18px;
+        height: 18px;
+        background-position: -178px -88px;
+    }
+
+    &.settings {
+        width: 20px;
+        height: 20px;
+        background-position: -138px -90px;
+    }
+
+    &.sort-arrow {
+        width: 10px;
+        height: 5px;
+        background-position: -252px -45px;
+    }
+
+    &.drop-blue {
+        width: 20px;
+        height: 20px;
+        background-position: -208px -214px;
+    }
+
+    
+    &.man {
+        width: 40px;
+        height: 40px;
+        background-position: -236px -174px;
+    }
+}

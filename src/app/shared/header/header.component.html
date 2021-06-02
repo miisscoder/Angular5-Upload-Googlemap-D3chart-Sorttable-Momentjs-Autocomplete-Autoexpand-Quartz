@@ -1,0 +1,26 @@
+<!--header--> 
+<div class="header-container flex space-between  middle">
+    <div class="logo-box flex center middle">
+        <i class="icon logo"></i>
+    </div>
+    <div class="flex space-between middle top-shadow-box">
+        <div class="title flex start middle">
+            <h1>Quartz Energy</h1>
+            <h2>| Offset Operator Frac Schedule</h2>
+        </div>
+        <div class="flex end middle">
+            <!--search-->
+            <div class="search-group" (keydown)="keyDownFunction($event)">
+                <i class="icon search"></i>
+                <input placeholder="Search Well, Region, Company, Contact or Date" />
+            </div>
+            <!--upload-->
+            <div class="filter-box flex center middle">
+                <a href="javascript:;"
+                   (click)="goto('/main/upload')"
+                   routerLink="/main/upload"
+                   routerLinkActive="active"><i class="icon filter"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
