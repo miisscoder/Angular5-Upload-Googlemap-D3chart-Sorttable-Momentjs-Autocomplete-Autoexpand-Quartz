@@ -1,8 +1,7 @@
-# Project Title Here
-Quartz Energy
+# Quartz Energy
 
 ### Description
-
+Quartz Energy Website includes 3 types of data visualization:  map, chart, table.
 
 ## Prerequisites
  - node js ( recommended latest stable version https://nodejs.org/en/)
