@@ -27,3 +27,6 @@ admin `admin@admin.com` and the password `12345678`.
 ng test 
 
 ## Notes
+if error about "node-sass" happens , run:
+npm uninstall --save node-sass
+npm install --save node-sass
